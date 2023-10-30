@@ -99,3 +99,8 @@ h6 {
 #__next {
   isolation: isolate;
 }
+
+/* General styles */
+main {
+  display: flex;
+}
