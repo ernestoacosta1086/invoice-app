@@ -1,8 +1,13 @@
-import { createHtmlElement } from './modules/utils.js'
+import InvoiceLoader from './modules/invoiceLoader.js'
+import InvoiceGenerator from './modules/invoiceGenerator.js'
 
-//Elements variables
-let invoicesListContainer = document.querySelector('.invoice-list')
-let item = document.createElement('div')
-item.textContent = 'Test invoice Test invoice Test invoice Test invoice'
+async function startApp() {
+  const invoiceData = await InvoiceLoader.invoiceLoad()
+  if (invoiceData) {
+    console.log(invoiceData)
+    const invoiceContainer = document.querySelector('.invoice-list')
+    InvoiceGenerator.generateInvoiceDom(invoiceData, invoiceContainer)
+  }
+}
 
-createHtmlElement(invoicesListContainer, item)
+startApp()
