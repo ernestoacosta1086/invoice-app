@@ -1,3 +1,62 @@
+.invoice-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 3rem;
+  margin-right: 3rem;
+  width: 100%;
+}
+
 .invoice-item {
-  background-color: blue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 0.2rem;
+  padding: 0 1.5rem;
+  height: 4.5rem;
+}
+
+.invoice-item #id {
+  font-size: var(--font-size-heading-small);
+  font-weight: var(--font-weight-bold-700);
+  letter-spacing: var(--letter-spacing-small);
+  line-height: var(--line-height-variant);
+  min-width: 6rem;
+}
+
+.invoice-item #id spam {
+  color: var(--color-light-blue);
+  font-weight: var(--font-weight-bold-700);
+  letter-spacing: var(--letter-spacing-small);
+  line-height: var(--line-height-variant);
+}
+
+.invoice-item #date {
+  color: var(--color-light-blue);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium-500);
+  letter-spacing: var(--letter-spacing-small-x);
+  line-height: var(--line-height-variant);
+  min-width: 7rem;
+}
+
+.invoice-item #clientName {
+  color: var(--color-light-blue);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium-500);
+  letter-spacing: var(--letter-spacing-small-x);
+  line-height: var(--line-height-variant);
+  min-width: 7rem;
+}
+
+.invoice-item #total {
+  color: var(--color-text-dark);
+  text-align: right;
+  font-size: var(--font-size-heading-small);
+  font-weight: var(--font-weight-bold-700);
+  letter-spacing: var(--letter-spacing-small);
+  line-height: var(--line-height-heading-s);
+  min-width: 7rem;
 }

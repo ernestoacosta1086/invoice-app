@@ -104,4 +104,8 @@ h6 {
 /* General styles */
 main {
   display: flex;
+  gap: 3rem;
+  background-color: var(--color-background-light);
+  font-family: var(--font-family-base);
+  font-style: normal;
 }
