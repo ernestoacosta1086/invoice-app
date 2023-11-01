@@ -2,9 +2,8 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin-top: 3rem;
-  margin-right: 3rem;
   width: 100%;
+  padding: 4rem 10rem;
 }
 
 .invoice-item {
@@ -26,7 +25,7 @@
   min-width: 6rem;
 }
 
-.invoice-item #id spam {
+.invoice-item #id span {
   color: var(--color-light-blue);
   font-weight: var(--font-weight-bold-700);
   letter-spacing: var(--letter-spacing-small);
@@ -59,4 +58,30 @@
   letter-spacing: var(--letter-spacing-small);
   line-height: var(--line-height-heading-s);
   min-width: 7rem;
+}
+
+.invoice-item .status {
+  width: 7rem;
+  letter-spacing: var(--letter-spacing-small);
+  font-weight: var(--font-weight-bold-700);
+  background-color: bisque;
+  text-align: center;
+  padding: 0.5rem 0;
+  letter-spacing: var(--letter-spacing-small);
+  border-radius: 0.4rem;
+}
+
+.invoice-item .paid {
+  color: #33d69f;
+  background-color: #33d69f12; /* '09' controls opacity */
+}
+
+.invoice-item .pending {
+  color: #ff8f00;
+  background-color: #ff8f0012; /* '09' controls opacity */
+}
+
+.invoice-item .draft {
+  color: #373b53;
+  background-color: #373b5312; /* '09' controls opacity */
 }
