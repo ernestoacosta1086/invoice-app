@@ -33,6 +33,10 @@
   letter-spacing: var(--letter-spacing-small);
 }
 
+.action_menu-checkbox_menu:hover {
+  cursor: pointer;
+}
+
 .action_menu-button {
   color: white;
   display: flex;
@@ -46,6 +50,10 @@
   padding: 0 1rem 0 0.5rem;
 }
 
+.action_menu-button:hover {
+  cursor: pointer;
+}
+
 .action_menu-plus {
   background-color: white;
   padding: 0.6rem;
@@ -54,4 +62,42 @@
 
 .action_menu-new {
   margin-top: 0.2rem;
+}
+
+.action_menu-checkbox_menu {
+  display: flex;
+  align-items: center;
+}
+
+.action_menu-checkbox_options {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: space-between;
+  top: 5rem;
+  margin-left: -2rem;
+  background-color: white;
+  width: 12rem;
+  padding: 1rem;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 0.4rem;
+}
+
+.action_menu-filter_item {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.action_menu-status-text {
+  position: relative;
+  top: 0.15rem;
+  color: var(--color-text-dark);
+  font-weight: var(--font-weight-bold-700);
+  line-height: var(--line-height-heading);
+  letter-spacing: var(--letter-spacing-small);
+}
+
+.action_menu-filter_item:hover .action_menu-status-text:hover {
+  cursor: pointer;
 }
