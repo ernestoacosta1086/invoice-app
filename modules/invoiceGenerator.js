@@ -24,6 +24,25 @@ class InvoiceGenerator {
         <svg width="7" height="10" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4 4-4 4" stroke="#7C5DFA" stroke-width="2" fill="none" fill-rule="evenodd"/></svg>
     `
   }
+
+  static generateFilterMenuDom(statusData, container) {
+    statusData.forEach((status) => {
+      const statusItem = document.createElement('div')
+      statusItem.classList.add('action_menu-filter_item')
+      container.appendChild(statusItem)
+      this.generateFilterMenu(status, statusItem)
+    })
+  }
+
+  static generateFilterMenu(status, container) {
+    const statusCamelCase = status.charAt(0).toUpperCase() + status.slice(1)
+    container.innerHTML = `
+      <input class="action_menu-checkbox" type="checkbox" id="status-option" />
+      <label for="status-option">
+        <span class="action_menu-status-text">${statusCamelCase}</span>
+      </label>
+`
+  }
 }
 
 export default InvoiceGenerator
