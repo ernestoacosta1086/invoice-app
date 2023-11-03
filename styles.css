@@ -4,6 +4,7 @@
 /*Components imports*/
 @import './css/left_menu.css';
 @import './css/invoice.css';
+@import './css/action_menu.css';
 
 /* Variables */
 :root {
@@ -37,8 +38,8 @@
   --letter-spacing-small: -0.25px;
   --letter-spacing-small-x: -0.1px;
 
-  --line-height-heading: 2.0625em;
-  --line-height-heading-s: 1.5em;
+  --line-height-heading: 2.0625rem;
+  --line-height-heading-s: 1.5rem;
   --line-height-medium: 1.375rem;
   --line-height-body: 1.125rem;
   --line-height-variant: 0.9375rem;
@@ -103,9 +104,17 @@ h6 {
 
 /* General styles */
 main {
+  max-height: 100vh;
   display: flex;
-  gap: 3rem;
   background-color: var(--color-background-light);
   font-family: var(--font-family-base);
   font-style: normal;
+}
+
+main section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 10rem;
+  width: 100%;
 }
