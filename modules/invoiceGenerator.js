@@ -37,9 +37,9 @@ class InvoiceGenerator {
   static generateFilterMenu(status, container) {
     const statusCamelCase = status.charAt(0).toUpperCase() + status.slice(1)
     container.innerHTML = `
-      <input class="action_menu-checkbox" type="checkbox" id="status-option" />
-      <label for="status-option">
-        <span class="action_menu-status-text">${statusCamelCase}</span>
+      <input class="action_menu-checkbox" type="checkbox" id="status-option-${status}" />
+      <label for="status-option-${status}">
+        <span class="action_menu-status_text">${statusCamelCase}</span>
       </label>
 `
   }
