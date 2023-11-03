@@ -89,7 +89,7 @@
   gap: 0.8rem;
 }
 
-.action_menu-status-text {
+.action_menu-status_text {
   position: relative;
   top: 0.15rem;
   color: var(--color-text-dark);
