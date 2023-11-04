@@ -52,6 +52,7 @@
 
 .action_menu-button:hover {
   cursor: pointer;
+  background-color: var(--color-purple-light);
 }
 
 .action_menu-plus {

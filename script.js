@@ -4,6 +4,8 @@ import InvoiceGenerator from './modules/invoiceGenerator.js'
 let filterMenu = document.querySelector('.action_menu-checkbox_menu')
 let filterMenuContainer = document.querySelector('.action_menu-checkbox_options')
 const invoiceContainer = document.querySelector('.invoice-list')
+let amountOfInvoiceText = document.querySelector('.action_menu-total')
+let emptyInvoiceImage = document.querySelector('.invoice-empty-image')
 
 //Variable to save all possible status
 let statusData = []
@@ -13,6 +15,8 @@ async function startApp() {
   if (invoiceData) {
     //Generate the list with all invoices
     InvoiceGenerator.generateInvoiceDom(invoiceData, invoiceContainer)
+    //Update the amount of invoice first time
+    updateAmountOfInvoicesText(invoiceData.length)
     //Populate all posible statuses
     invoiceData.forEach((invoice) => {
       if (!statusData.includes(invoice.status)) {
@@ -43,15 +47,18 @@ async function startApp() {
         const filteredInvoices = await genFilteredInvoices(statusFiltered)
         //Generate the DOM elements to populate the invoice list
         InvoiceGenerator.generateInvoiceDom(filteredInvoices, invoiceContainer)
+        //Update the text depends on invoices amount
+        updateAmountOfInvoicesText(filteredInvoices.length)
       }
       //On click if the checkbox is not checked delete this value from the array
       else if (!checkboxesStatus[index].checked && statusFiltered.includes(statusData[index])) {
         statusFiltered = statusFiltered.filter((value) => value !== statusData[index])
-
         //Create an array with all filtered invoices await
         const filteredInvoices = await genFilteredInvoices(statusFiltered)
         //Generate the DOM elements to populate the invoice list
         InvoiceGenerator.generateInvoiceDom(filteredInvoices, invoiceContainer)
+        //Update the text depends on invoices amount
+        updateAmountOfInvoicesText(filteredInvoices.length)
       }
     })
   })
@@ -77,3 +84,16 @@ async function genFilteredInvoices(status) {
 filterMenu.addEventListener('click', () => {
   filterMenuContainer.classList.toggle('visually-hidden')
 })
+
+//Update the text depends on invoices amount
+function updateAmountOfInvoicesText(amount) {
+  if (amount !== 0) {
+    amountOfInvoiceText.textContent = 'There are ' + amount + ' total invoices'
+    emptyInvoiceImage.classList.add('visually-hidden')
+    console.log(emptyInvoiceImage.classList)
+  } else {
+    amountOfInvoiceText.textContent = 'No invoices'
+    emptyInvoiceImage.classList.remove('visually-hidden')
+    console.log(emptyInvoiceImage.classList)
+  }
+}
