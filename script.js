@@ -6,6 +6,9 @@ let filterMenuContainer = document.querySelector('.action_menu-checkbox_options'
 const invoiceContainer = document.querySelector('.invoice-list')
 let amountOfInvoiceText = document.querySelector('.action_menu-total')
 let emptyInvoiceImage = document.querySelector('.invoice-empty-image')
+let listOfInvoiceSection = document.querySelector('.invoice_list_section')
+let viewInvoiceSection = document.querySelector('.invoice_view_section')
+let goBackDiv = document.querySelector('.invoice_view-back')
 
 //Variable to save all possible status
 let statusData = []
@@ -15,6 +18,11 @@ async function startApp() {
   if (invoiceData) {
     //Generate the list with all invoices
     InvoiceGenerator.generateInvoiceDom(invoiceData, invoiceContainer)
+    //Add on click event to each invoice
+    let invoicesItems = document.querySelectorAll('.invoice-item')
+    onClickInvoice(invoicesItems)
+    console.log(invoicesItems)
+
     //Update the amount of invoice first time
     updateAmountOfInvoicesText(invoiceData.length)
     //Populate all posible statuses
@@ -90,10 +98,25 @@ function updateAmountOfInvoicesText(amount) {
   if (amount !== 0) {
     amountOfInvoiceText.textContent = 'There are ' + amount + ' total invoices'
     emptyInvoiceImage.classList.add('visually-hidden')
-    console.log(emptyInvoiceImage.classList)
   } else {
     amountOfInvoiceText.textContent = 'No invoices'
     emptyInvoiceImage.classList.remove('visually-hidden')
     console.log(emptyInvoiceImage.classList)
   }
 }
+
+//Add event on clic to show/hide the view invoice section
+function onClickInvoice(invoicesList) {
+  invoicesList.forEach((invoice) => {
+    invoice.addEventListener('click', () => {
+      listOfInvoiceSection.classList.toggle('visually-hidden')
+      viewInvoiceSection.classList.toggle('visually-hidden')
+    })
+  })
+}
+
+//Add the event clic to the Go Back button
+goBackDiv.addEventListener('click', () => {
+  listOfInvoiceSection.classList.toggle('visually-hidden')
+  viewInvoiceSection.classList.toggle('visually-hidden')
+})

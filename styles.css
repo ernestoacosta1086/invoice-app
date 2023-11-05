@@ -5,6 +5,7 @@
 @import './css/left_menu.css';
 @import './css/invoice.css';
 @import './css/action_menu.css';
+@import './css/invoice_view.css';
 
 /* Variables */
 :root {
