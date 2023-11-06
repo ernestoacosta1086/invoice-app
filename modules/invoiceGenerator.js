@@ -5,7 +5,7 @@ class InvoiceGenerator {
     // Llena facturaElement con los datos de facturaData
     invoiceData.forEach((invoice) => {
       const invoiceItem = document.createElement('div')
-      invoiceItem.classList.add('invoice-item')
+      invoiceItem.classList.add('invoice-item', 'rounded-whitebg-shadow')
       container.appendChild(invoiceItem)
       this.generateInvoiceItem(invoice, invoiceItem)
     })
@@ -38,9 +38,7 @@ class InvoiceGenerator {
     const statusCamelCase = status.charAt(0).toUpperCase() + status.slice(1)
     container.innerHTML = `
       <input class="action_menu-checkbox" type="checkbox" id="status-option-${status}" />
-      <label for="status-option-${status}">
-        <span class="action_menu-status_text">${statusCamelCase}</span>
-      </label>
+      <span class="action_menu-status_text">${statusCamelCase}</span>
 `
   }
 }

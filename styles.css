@@ -130,3 +130,10 @@ main section {
   white-space: nowrap;
   width: 1px;
 }
+
+/* COMMON */
+.rounded-whitebg-shadow {
+  background-color: white;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 0.5rem;
+}
