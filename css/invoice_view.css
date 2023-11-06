@@ -1,0 +1,30 @@
+.invoice_view_section {
+}
+
+.invoice_view-back {
+  display: flex;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.invoice_view-back:hover {
+  cursor: pointer;
+}
+
+.invoice_view-back span {
+  color: var(--color-text-dark);
+  font-size: var(--font-size-heading-small);
+  font-weight: var(--font-weight-bold-700);
+  letter-spacing: var(--letter-spacing-small);
+  line-height: var(--line-height-variant);
+  margin-left: 2rem;
+}
+
+.invoice_view-back span:hover {
+  cursor: pointer;
+  color: var(--color-light-blue);
+}
+
+.invoice_view-back svg {
+  margin-bottom: 3px;
+}

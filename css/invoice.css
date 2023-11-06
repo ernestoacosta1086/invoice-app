@@ -9,11 +9,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.05);
-  border-radius: 0.2rem;
   padding: 0 1.5rem;
   height: 4.5rem;
+}
+
+.invoice-item:hover {
+  border: 1px solid var(--color-purple);
+  cursor: pointer;
 }
 
 .invoice-item #id {

@@ -5,6 +5,7 @@
 @import './css/left_menu.css';
 @import './css/invoice.css';
 @import './css/action_menu.css';
+@import './css/invoice_view.css';
 
 /* Variables */
 :root {
@@ -128,4 +129,11 @@ main section {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+/* COMMON */
+.rounded-whitebg-shadow {
+  background-color: white;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 0.5rem;
 }
