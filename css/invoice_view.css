@@ -1,10 +1,6 @@
 .invoice_view-section {
-}
-
-.invoice_view-actions {
   display: flex;
-  justify-content: space-between;
-  background-color: red;
+  gap: 3rem;
 }
 
 .invoice_view-back {
@@ -35,4 +31,43 @@
 
 .invoice_view-back svg {
   margin-bottom: 3px;
+}
+
+.invoice_view-actions {
+  display: flex;
+  justify-content: space-between;
+  background-color: red;
+}
+
+.invoice_view-actions_left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 2rem;
+}
+
+.invoice_view-actions_right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 2rem;
+}
+
+#invoice-status-label {
+  color: var(--color-text-gray);
+}
+
+#invoice-edit {
+  background-color: var(--color-background-light);
+  color: var(--color-light-blue);
+}
+
+#invoice-delete {
+  background-color: var(--color-orange-dark);
+  color: var(--color-background-light);
+}
+
+#invoice-mark-as-paid {
+  background-color: var(--color-purple);
+  color: var(--color-background-light);
 }
