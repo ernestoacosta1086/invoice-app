@@ -103,11 +103,20 @@
           <span>Go back</span>
         </div>
         <div class="invoice_view-actions rounded-whitebg-shadow">
-          <div><span>status</span><span>Pending</span></div>
-          <div>
-            <button class="rounded-button-font-center">Edit</button
-            ><button class="rounded-button-font-center">Delete</button
-            ><button class="rounded-button-font-center">Mark as paid</button>
+          <div class="invoice_view-actions_left">
+            <span id="invoice-status-label">Status</span><span>Pending</span>
+          </div>
+          <div class="invoice_view-actions_right">
+            <button id="invoice-edit" class="rounded-button-font-center">
+              Edit</button
+            ><button id="invoice-delete" class="rounded-button-font-center">
+              Delete</button
+            ><button
+              id="invoice-mark-as-paid"
+              class="rounded-button-font-center"
+            >
+              Mark as paid
+            </button>
           </div>
         </div>
         <div class="invoice_view-content rounded-whitebg-shadow"></div>
