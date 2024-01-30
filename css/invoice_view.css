@@ -1,10 +1,18 @@
-.invoice_view_section {
+.invoice_view-section {
+}
+
+.invoice_view-actions {
+  display: flex;
+  justify-content: space-between;
+  background-color: red;
 }
 
 .invoice_view-back {
   display: flex;
   align-items: center;
   margin-top: 3rem;
+  width: fit-content;
+  padding: 0.5rem 0;
 }
 
 .invoice_view-back:hover {

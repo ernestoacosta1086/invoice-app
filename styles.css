@@ -1,15 +1,15 @@
 /*General css*/
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&display=swap");
 
 /*Components imports*/
-@import './css/left_menu.css';
-@import './css/invoice.css';
-@import './css/action_menu.css';
-@import './css/invoice_view.css';
+@import "./css/left_menu.css";
+@import "./css/invoice.css";
+@import "./css/action_menu.css";
+@import "./css/invoice_view.css";
 
 /* Variables */
 :root {
-  --font-family-base: 'League Spartan', sans-serif;
+  --font-family-base: "League Spartan", sans-serif;
 
   --color-purple: #7c5dfa;
   --color-purple-light: #9277ff;
@@ -136,4 +136,23 @@ main section {
   background-color: white;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.05);
   border-radius: 0.5rem;
+}
+
+.rounded-button-font-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 1.5rem;
+  padding: 0.5rem 1.5rem;
+  font-size: var(--font-size-heading-small);
+  font-weight: var(--font-weight-bold-700);
+  letter-spacing: var(--letter-spacing-small);
+  height: 3rem;
+}
+
+.rounded-button-font-center:hover {
+  cursor: pointer;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
 }
