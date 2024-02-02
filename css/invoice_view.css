@@ -71,3 +71,36 @@
   background-color: var(--color-purple);
   color: var(--color-background-light);
 }
+
+.invoice_view-content {
+  padding: 2rem 3rem;
+}
+
+.invoice-table {
+  width: 100%;
+}
+
+.address {
+  text-align: right;
+  width: 10%;
+  height: 8rem;
+}
+
+.address1 {
+  text-align: left;
+  width: 10%;
+  height: 8rem;
+}
+
+.payment-due {
+  vertical-align: bottom;
+}
+
+.payment-due-date {
+  vertical-align: top;
+}
+
+th,
+td {
+  width: 25%;
+}
