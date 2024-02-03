@@ -6,18 +6,10 @@
 
 .action_menu-title {
   color: var(--color-text-dark);
-  font-size: var(--font-size-heading-large);
-  font-weight: var(--font-weight-bold-700);
-  line-height: var(--line-height-heading);
-  letter-spacing: var(--letter-spacing-small);
 }
 
 .action_menu-total {
   color: var(--color-text-gray);
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-medium-500);
-  line-height: var(--line-height-variant);
-  letter-spacing: var(--letter-spacing-small-x);
 }
 
 .action_menu-filter {
@@ -28,9 +20,6 @@
 .action_menu-filter_text {
   margin-right: 1rem;
   color: var(--color-text-dark);
-  font-weight: var(--font-weight-bold-700);
-  line-height: var(--line-height-heading);
-  letter-spacing: var(--letter-spacing-small);
 }
 
 .action_menu-checkbox_menu:hover {
@@ -81,9 +70,6 @@
   position: relative;
   top: 0.15rem;
   color: var(--color-text-dark);
-  font-weight: var(--font-weight-bold-700);
-  line-height: var(--line-height-heading);
-  letter-spacing: var(--letter-spacing-small);
 }
 
 .action_menu-filter_item:hover .action_menu-status-text:hover {
