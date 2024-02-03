@@ -17,10 +17,6 @@
 
 .invoice_view-back span {
   color: var(--color-text-dark);
-  font-size: var(--font-size-heading-small);
-  font-weight: var(--font-weight-bold-700);
-  letter-spacing: var(--letter-spacing-small);
-  line-height: var(--line-height-variant);
   margin-left: 2rem;
 }
 
@@ -80,16 +76,21 @@
   width: 100%;
 }
 
+.invoice-theme,
+.address,
+.invoice-field {
+  color: var(--color-text-gray);
+}
+
 .address {
   text-align: right;
-  width: 10%;
   height: 8rem;
 }
 
 .address1 {
   text-align: left;
-  width: 10%;
-  height: 8rem;
+  vertical-align: top;
+  height: 6rem;
 }
 
 .payment-due {

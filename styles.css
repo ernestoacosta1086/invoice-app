@@ -25,7 +25,6 @@
   --color-background-dark: #141625;
   --color-background-light: #f8f8fb;
 
-  --font-weight-regular-400: 400;
   --font-weight-medium-500: 500;
   --font-weight-bold-700: 700;
 
@@ -108,8 +107,6 @@ main {
   max-height: 100vh;
   display: flex;
   background-color: var(--color-background-light);
-  font-family: var(--font-family-base);
-  font-style: normal;
 }
 
 main section {
@@ -145,9 +142,6 @@ main section {
   border: none;
   border-radius: 1.5rem;
   padding: 0.5rem 1.5rem;
-  font-size: var(--font-size-heading-small);
-  font-weight: var(--font-weight-bold-700);
-  letter-spacing: var(--letter-spacing-small);
   height: 3rem;
 }
 
@@ -155,4 +149,57 @@ main section {
   cursor: pointer;
   opacity: 0.9;
   transition: opacity 0.3s ease;
+}
+
+.first-letter-gray > span:first-child {
+  color: var(--color-text-gray);
+}
+
+/* COMMON FONTS */
+[class^="font-"] {
+  font-family: var(--font-family-base);
+}
+
+[class^="font-heading"] {
+  font-weight: var(--font-weight-bold-700);
+}
+
+[class^="font-body"] {
+  font-weight: var(--font-weight-medium-500);
+}
+
+.font-heading-l {
+  font-size: var(--font-size-heading-large);
+  line-height: var(--line-height-heading);
+  letter-spacing: var(--letter-spacing-large);
+}
+
+.font-heading-m {
+  font-size: var(--font-size-heading-medium);
+  line-height: var(--line-height-medium);
+  letter-spacing: var(--letter-spacing-medium);
+}
+
+.font-heading-s {
+  font-size: var(--font-size-heading-small);
+  line-height: var(--line-height-heading-s);
+  letter-spacing: var(--letter-spacing-small);
+}
+
+.font-heading-s-variant {
+  font-size: var(--font-size-heading-small);
+  line-height: var(--line-height-variant);
+  letter-spacing: var(--letter-spacing-small);
+}
+
+.font-body {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-body);
+  letter-spacing: var(--letter-spacing-small);
+}
+
+.font-body-variant {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-variant);
+  letter-spacing: var(--letter-spacing-small-x);
 }

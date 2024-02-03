@@ -19,56 +19,34 @@
 }
 
 .invoice-item #id {
-  font-size: var(--font-size-heading-small);
-  font-weight: var(--font-weight-bold-700);
-  letter-spacing: var(--letter-spacing-small);
-  line-height: var(--line-height-variant);
   min-width: 6rem;
 }
 
 .invoice-item #id span {
   color: var(--color-light-blue);
-  font-weight: var(--font-weight-bold-700);
-  letter-spacing: var(--letter-spacing-small);
-  line-height: var(--line-height-variant);
 }
 
 .invoice-item #date {
   color: var(--color-light-blue);
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-medium-500);
-  letter-spacing: var(--letter-spacing-small-x);
-  line-height: var(--line-height-variant);
   min-width: 7rem;
 }
 
 .invoice-item #clientName {
   color: var(--color-light-blue);
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-medium-500);
-  letter-spacing: var(--letter-spacing-small-x);
-  line-height: var(--line-height-variant);
   min-width: 7rem;
 }
 
 .invoice-item #total {
   color: var(--color-text-dark);
   text-align: right;
-  font-size: var(--font-size-heading-small);
-  font-weight: var(--font-weight-bold-700);
-  letter-spacing: var(--letter-spacing-small);
-  line-height: var(--line-height-heading-s);
   min-width: 7rem;
 }
 
 .invoice-item .status {
   width: 7rem;
-  letter-spacing: var(--letter-spacing-small);
-  font-weight: var(--font-weight-bold-700);
   background-color: bisque;
   text-align: center;
   padding: 0.5rem 0;
-  letter-spacing: var(--letter-spacing-small);
   border-radius: 0.4rem;
 }
 
@@ -104,19 +82,11 @@
 
 .invoice-empty-image h2 {
   color: var(--color-text-dark);
-  font-size: var(--font-size-heading-medium);
-  font-weight: var(--font-weight-bold-700);
-  letter-spacing: var(--letter-spacing-medium);
-  line-height: var(--line-height-variant);
   margin-top: 2rem;
 }
 
 .invoice-empty-image p {
   color: var(--color-text-gray);
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-medium-500);
-  letter-spacing: var(--letter-spacing-small-x);
-  line-height: var(--line-height-variant);
   width: 50%;
   text-align: center;
 }
