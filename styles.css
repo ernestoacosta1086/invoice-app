@@ -104,7 +104,7 @@ h6 {
 
 /* General styles */
 main {
-  max-height: 100vh;
+  max-height: max-content;
   display: flex;
   background-color: var(--color-background-light);
 }
