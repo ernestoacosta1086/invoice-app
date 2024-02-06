@@ -72,16 +72,23 @@ function updateAmountOfInvoicesText(amount) {
 function setOnClickInvoice() {
   let invoicesItems = document.querySelectorAll(".invoice-item");
   invoicesItems.forEach((invoice) => {
-    invoice.addEventListener("click", () => {
+    invoice.addEventListener("click", async () => {
       listOfInvoiceSection.classList.toggle("visually-hidden");
       viewInvoiceSection.classList.toggle("visually-hidden");
+      // console.log(invoice);
+      // console.log(invoice.querySelector("#id").textContent.slice(1));
+      let invoiceId = invoice.querySelector("#id").textContent.slice(1);
+      // setInvoiceDataById(invoiceId);
+      let invoiceByIdData = await InvoiceLoader.genInvoiceDataFromId(invoiceId);
+      let invoiceData = JSON.stringify(invoiceByIdData, null, 2);
+      const invoiceObject = JSON.parse(invoiceData);
+      setInvoiceData(invoiceObject);
     });
   });
 }
 
 function setOnStatusClick(statusItem, index) {
   let checkboxItem = statusItem.querySelector(".action_menu-checkbox");
-
   statusItem.addEventListener("click", async (event) => {
     //Clean all elements from the invoice list before generate filtered invoices
     while (invoiceContainer.firstChild) {
@@ -116,3 +123,19 @@ goBackDiv.addEventListener("click", () => {
   listOfInvoiceSection.classList.toggle("visually-hidden");
   viewInvoiceSection.classList.toggle("visually-hidden");
 });
+
+//Set the invoice data to the invoice view
+function setInvoiceData(invoiceData) {
+  // Verify is invoice data has the info
+  if (!invoiceData) {
+    console.error("Datos de factura no válidos");
+    return;
+  }
+  //Access to DOM elements to update values
+  const invoiceStatus = document.getElementById("invoice-status-value");
+  //Add text content and css to update the style
+  invoiceStatus.classList = ["font-heading-s"];
+  invoiceStatus.textContent = `● ${invoiceData.status}`;
+  invoiceStatus.classList.add("status", invoiceData.status.toLowerCase());
+  invoiceStatus.style.textTransform = "capitalize";
+}

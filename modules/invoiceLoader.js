@@ -1,60 +1,62 @@
 class InvoiceLoader {
   static async genInvoices(selectedStatuses) {
     try {
-      const response = await fetch('./../data.json')
+      const response = await fetch("./../data.json");
       if (response.ok) {
-        let invoiceData = await response.json()
+        let invoiceData = await response.json();
         if (selectedStatuses && selectedStatuses.length > 0) {
           // Filtrar facturas según los estados seleccionados
-          invoiceData = invoiceData.filter((invoice) => selectedStatuses.includes(invoice.status))
+          invoiceData = invoiceData.filter((invoice) =>
+            selectedStatuses.includes(invoice.status)
+          );
         }
 
-        return invoiceData
+        return invoiceData;
       } else {
-        console.error('Error al cargar datos de factura')
-        return null
+        console.error("Error al cargar datos de factura");
+        return null;
       }
     } catch (error) {
-      console.error('Error en la solicitud de factura:', error)
-      return null
+      console.error("Error en la solicitud de factura:", error);
+      return null;
     }
   }
 
   static async genStatuses() {
     try {
-      let statuses = []
-      const invoices = await InvoiceLoader.genInvoices()
+      let statuses = [];
+      const invoices = await InvoiceLoader.genInvoices();
       invoices.forEach((invoice) => {
         if (!statuses.includes(invoice.status)) {
-          statuses.push(invoice.status)
+          statuses.push(invoice.status);
         }
-      })
-      return statuses
+      });
+      return statuses;
     } catch (error) {
-      console.error('Error en la solicitud de factura:', error)
-      return null
+      console.error("Error en la solicitud de factura:", error);
+      return null;
     }
   }
   static async genInvoiceDataFromId(invoiceId) {
     try {
-      const response = await fetch('./../data.json')
+      const response = await fetch("./../data.json");
       if (response.ok) {
-        const invoiceData = await response.json()
+        const invoiceData = await response.json();
 
-        // Filtrar facturas según los estados seleccionados
-        const filteredInvoices = invoiceData.filter((invoice) =>
-          statusSelected.includes(invoice.status)
-        )
-        return filteredInvoices
+        const foundInvoice = invoiceData.find(
+          (invoice) => invoice.id === invoiceId
+        );
+
+        return foundInvoice || null; // Si se encuentra devuelve la factura, de lo contrario null
       } else {
-        console.error('Error al cargar datos de factura')
-        return null
+        console.error("Error al cargar datos de factura");
+        return null;
       }
     } catch (error) {
-      console.error('Error en la solicitud de factura:', error)
-      return null
+      console.error("Error en la solicitud de factura:", error);
+      return null;
     }
   }
 }
 
-export default InvoiceLoader
+export default InvoiceLoader;
