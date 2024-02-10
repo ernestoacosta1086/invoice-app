@@ -18,25 +18,21 @@
   cursor: pointer;
 }
 
-.invoice-item #id {
+#id {
   min-width: 6rem;
 }
 
-.invoice-item #id span {
-  color: var(--color-light-blue);
-}
-
-.invoice-item #date {
+#date {
   color: var(--color-light-blue);
   min-width: 7rem;
 }
 
-.invoice-item #clientName {
+#clientName {
   color: var(--color-light-blue);
   min-width: 7rem;
 }
 
-.invoice-item #total {
+#total {
   color: var(--color-text-dark);
   text-align: right;
   min-width: 7rem;

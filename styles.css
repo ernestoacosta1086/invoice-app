@@ -151,7 +151,7 @@ main section {
   transition: opacity 0.3s ease;
 }
 
-.first-letter-gray > span:first-child {
+.first-letter-gray {
   color: var(--color-text-gray);
 }
 

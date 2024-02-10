@@ -132,15 +132,17 @@
         <div class="invoice_view-content rounded-whitebg-shadow">
           <table class="invoice-table">
             <tr>
-              <td class="font-heading-s first-letter-gray">
-                <span>#</span>XM9141<br />
-                <span class="font-body invoice-theme">Graphic Design</span>
+              <td class="font-heading-s">
+                <span class="first-letter-gray">#</span
+                ><span id="invoice-id-view"></span><br />
+                <span
+                  class="font-body invoice-theme"
+                  id="invoice-description"
+                ></span>
               </td>
               <th></th>
               <th></th>
-              <td class="font-body address">
-                19 Union Terrace London E1 3EZ United Kingdom
-              </td>
+              <td id="invoice-address" class="font-body address"></td>
             </tr>
             <tr>
               <td class="font-body invoice-field">Invoice Date</td>
@@ -148,18 +150,22 @@
               <td class="font-body invoice-field">Sent to</td>
             </tr>
             <tr>
-              <td class="font-heading-s">21 Aug 2021</td>
-              <td class="font-heading-s">Alex Grim</td>
-              <td class="font-heading-s">alexgrim@mail.com</td>
+              <td id="invoice-date" class="font-heading-s"></td>
+              <td id="invoice-bill-to" class="font-heading-s"></td>
+              <td id="invoice-email" class="font-heading-s"></td>
             </tr>
             <tr>
               <td class="font-body invoice-field payment-due">Payment Due</td>
-              <td class="font-body invoice-field address1">
-                84 Church Way Bradford BD1 9PB United Kingdom
-              </td>
+              <td
+                id="invoice-client-address"
+                class="font-body invoice-field address1"
+              ></td>
             </tr>
             <tr>
-              <td class="font-heading-s payment-due-date">20 Aug 2021</td>
+              <td
+                id="invoice-payment-due"
+                class="font-heading-s payment-due-date"
+              ></td>
             </tr>
           </table>
 
