@@ -77,7 +77,7 @@ function setOnClickInvoice() {
       viewInvoiceSection.classList.toggle("visually-hidden");
       // console.log(invoice);
       // console.log(invoice.querySelector("#id").textContent.slice(1));
-      let invoiceId = invoice.querySelector("#id").textContent.slice(1);
+      let invoiceId = invoice.querySelector("#invoice-id").textContent.slice(1);
       // setInvoiceDataById(invoiceId);
       let invoiceByIdData = await InvoiceLoader.genInvoiceDataFromId(invoiceId);
       let invoiceData = JSON.stringify(invoiceByIdData, null, 2);
@@ -133,9 +133,67 @@ function setInvoiceData(invoiceData) {
   }
   //Access to DOM elements to update values
   const invoiceStatus = document.getElementById("invoice-status-value");
+  const invoiceId = document.getElementById("invoice-id-view");
+  const invoiceDescription = document.getElementById("invoice-description");
+  const invoiceAddress = document.getElementById("invoice-address");
+  const invoiceDate = document.getElementById("invoice-date");
+  const invoicePaymentDue = document.getElementById("invoice-payment-due");
+  const invoiceBillTo = document.getElementById("invoice-bill-to");
+  const invoiceEmail = document.getElementById("invoice-email");
+  const invoiceClientAddress = document.getElementById(
+    "invoice-client-address"
+  );
+
+  console.log(JSON.stringify(invoiceData, null, 2));
   //Add text content and css to update the style
+  // Status
   invoiceStatus.classList = ["font-heading-s"];
   invoiceStatus.textContent = `● ${invoiceData.status}`;
   invoiceStatus.classList.add("status", invoiceData.status.toLowerCase());
   invoiceStatus.style.textTransform = "capitalize";
+
+  //Id
+  invoiceId.textContent = `${invoiceData.id}`;
+  //Description
+  invoiceDescription.textContent = `${invoiceData.description}`;
+  //Address
+  invoiceAddress.textContent = formatAddress(invoiceData.senderAddress);
+  //Date
+  invoiceDate.textContent = formatDate(`${invoiceData.createdAt}`);
+  //PaymentDue
+  invoicePaymentDue.textContent = formatDate(`${invoiceData.paymentDue}`);
+  //Bill to
+  invoiceBillTo.textContent = `${invoiceData.clientName}`;
+  //Email
+  invoiceEmail.textContent = `${invoiceData.clientEmail}`;
+  //Client Address
+  invoiceClientAddress.textContent = formatAddress(invoiceData.clientAddress);
+}
+
+function formatDate(inputDate) {
+  const months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  const dateParts = inputDate.split("-");
+  const year = dateParts[0];
+  const month = months[parseInt(dateParts[1], 10) - 1];
+  const day = dateParts[2];
+
+  return `${day} ${month} ${year}`;
+}
+
+function formatAddress(address) {
+  return `${address.street} ${address.city} ${address.postCode} ${address.country}`;
 }

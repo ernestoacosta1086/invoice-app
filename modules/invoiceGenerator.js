@@ -17,7 +17,7 @@ class InvoiceGenerator {
       invoiceData.status.charAt(0).toUpperCase() + invoiceData.status.slice(1);
     // Llenar el div con los datos de la factura
     invoiceDiv.innerHTML = `
-        <span class="font-heading-s" id="id"><span>#</span>${invoiceData.id}</span>
+        <span class="font-heading-s" id="invoice-id"><span class="first-letter-gray">#</span>${invoiceData.id}</span>
         <span class="font-body" id="date">Due ${invoiceData.createdAt}</span>
         <span class="font-body" id="clientName">${invoiceData.clientName}</span>
         <span class="font-heading-s" id="total">£ ${totalFixed}</span>
